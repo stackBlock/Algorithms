@@ -7,9 +7,9 @@ def making_change(amount, denominations):
   cache = [1] * (amount + 1)
 
   for coin in options:
-    for higher_amount in range(coin, amount + 1):
-      left_over = higher_amount - coin
-      cache[higher_amount] += cache[left_over]
+    for lrg_amt in range(coin, amount + 1):
+      lft_ovr = lrg_amt - coin
+      cache[lrg_amt] += cache[lft_ovr]
   
   return cache[amount]
 

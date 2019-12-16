@@ -3,17 +3,17 @@
 import argparse
 
 def find_max_profit(prices):
-  maxProfit = -10
+  mx_prf = -10
   for i in range(len(prices)): #O(n)
-    currentPrice = prices[i]
+    cur_pri = prices[i]
     for j in range(i+1, len(prices)): #O(n)
-      nextPrice =  prices[j]
-      profit = nextPrice - currentPrice
-      if profit > maxProfit:
-        maxProfit = profit
+      nxt_pri =  prices[j]
+      profit = nxt_pri - cur_pri
+      if profit > mx_prf:
+        mx_prf = profit
       j = j + 1
   i = i + 1
-  return maxProfit
+  return mx_prf
 
 
 print(find_max_profit([10, 7, 5, 8, 11, 9]))
@@ -27,5 +27,3 @@ if __name__ == '__main__':
 
   print("A profit of ${profit} can be made from the stock prices {prices}.".format(profit=find_max_profit(args.integers), prices=args.integers))
 
-#Iterative solution
-#Time complexity: O(n^2)
